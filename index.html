@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKIN PARK: UNSHATTER — Estreno Oficial Cines Colombia</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        lp: {
+                            black: '#070709',
+                            dark: '#0f0f13',
+                            card: '#141419',
+                            border: '#282830',
+                            acid: '#dfc131',      /* Tono mostaza dorado exacto */
+                            cyan: '#00f2fe',
+                            red: '#ff0044',
+                            muted: '#8b8e9b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        title: ['Bebas Neue', 'Orbitron', 'sans-serif'],
+                        mono: ['Space Mono', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #070709;
+            color: #e2e8f0;
+        }
+        h1, h2, h3, .font-title {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        .bg-cyber-grid {
+            background-image: 
+                linear-gradient(to right, rgba(223, 193, 49, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glow-acid {
+            text-shadow: 0 0 15px rgba(223, 193, 49, 0.7), 0 0 30px rgba(223, 193, 49, 0.3);
+        }
+        .box-glow-acid {
+            box-shadow: 0 0 30px -5px rgba(223, 193, 49, 0.25);
+        }
+        .tape-badge {
+            background: #dfc131;
+            color: #000;
+            transform: rotate(-1.5deg);
+            display: inline-block;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-lp-black text-slate-200 antialiased selection:bg-lp-acid selection:text-black">
+
+    <header class="sticky top-0 z-50 bg-lp-black/95 backdrop-blur-md border-b border-lp-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-lp-acid text-black flex items-center justify-center font-title font-black text-2xl group-hover:scale-105 transition-transform">LP</div>
+                    <div>
+                        <span class="block text-[10px] font-mono tracking-widest text-lp-acid uppercase">JOE HAHN FILM • 2026</span>
+                        <span class="font-title font-extrabold text-2xl text-white tracking-wider flex items-center gap-2">
+                            LINKIN PARK <span class="text-lp-acid">UNSHATTER</span>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-mono tracking-wider text-slate-300">
+                    <a href="#about" class="hover:text-lp-acid transition-colors uppercase">[01] SINOPSIS</a>
+                    <a href="#trailer" class="hover:text-lp-acid transition-colors uppercase">[02] TRAILER</a>
+                    <a href="#cinemas" class="hover:text-lp-acid transition-colors uppercase">[03] FORMATOS CINE</a>
+                    <a href="#register" class="hover:text-lp-acid transition-colors uppercase text-lp-acid">[04] FUNCIÓN EXCLUSIVA LPC</a>
+                    <a href="#attendees-section" class="hover:text-lp-acid transition-colors uppercase text-lp-acid font-bold">[05] FANS INSCRITOS</a>
+                </nav>
+
+                <!-- Primary CTA -->
+                <div class="flex items-center gap-3">
+                    <a href="#register" class="bg-lp-acid hover:bg-yellow-400 text-black font-title text-xl px-5 py-2 uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-lp-acid/20 flex items-center gap-2">
+                        <i class="fa-solid fa-ticket text-base"></i>
+                        <span>BOLETAS COLOMBIA</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-lp-acid" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-lp-dark border-b border-lp-border px-4 py-4 space-y-3 font-mono text-sm">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-lp-acid">[01] SINOPSIS</a>
+            <a href="#trailer" class="block py-2 text-slate-300 hover:text-lp-acid">[02] TRAILER</a>
+            <a href="#cinemas" class="block py-2 text-slate-300 hover:text-lp-acid">[03] FORMATOS CINE</a>
+            <a href="#register" class="block py-2 text-lp-acid font-bold">[04] FUNCIÓN EXCLUSIVA LPC</a>
+            <a href="#attendees-section" class="block py-2 text-lp-acid font-bold">[05] FANS INSCRITOS</a>
+        </div>
+    </header>
+
+    <section class="relative min-h-[90vh] flex items-center justify-center bg-cyber-grid bg-lp-black overflow-hidden py-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-lp-black/60 via-lp-black/40 to-lp-black pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-lp-card border border-lp-border text-lp-acid font-mono text-xs tracking-widest uppercase">
+                <i class="fa-solid fa-film mr-2"></i> Estreno Exclusivo • Septiembre 30, 2026
+            </div>
+
+            <h1 class="font-title text-6xl sm:text-8xl lg:text-9xl text-white uppercase tracking-wider mb-6 leading-none">
+                UNSHATTER <span class="text-lp-acid block sm:inline glow-acid">COLOMBIA</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-sans leading-relaxed">
+                La experiencia cinematográfica oficial de Linkin Park dirigida por Joe Hahn llega a las principales salas de cine del país. Vive el sonido envolvente y la nueva era en la gran pantalla.
+            </p>
+
+            <!-- Countdown Timer -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl mx-auto bg-lp-card/80 backdrop-blur-md border border-lp-border rounded-2xl p-6 mb-10 box-glow-acid">
+                <div class="text-center">
+                    <span id="days" class="block font-title text-3xl sm:text-4xl text-lp-acid">00</span>
+                    <span class="text-[10px] font-mono text-lp-muted uppercase">Días</span>
+                </div>
+                <div class="text-center border-l border-lp-border">
+                    <span id="hours" class="block font-title text-3xl sm:text-4xl text-white">00</span>
+                    <span class="text-[10px] font-mono text-lp-muted uppercase">Horas</span>
+                </div>
+                <div class="text-center border-l border-lp-border">
+                    <span id="minutes" class="block font-title text-3xl sm:text-4xl text-white">00</span>
+                    <span class="text-[10px] font-mono text-lp-muted uppercase">Min</span>
+                </div>
+                <div class="text-center border-l border-lp-border">
+                    <span id="seconds" class="block font-title text-3xl sm:text-4xl text-lp-acid">00</span>
+                    <span class="text-[10px] font-mono text-lp-muted uppercase">Seg</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#register" class="bg-lp-acid text-black font-title text-2xl px-8 py-3 rounded hover:bg-yellow-400 transition-all shadow-lg flex items-center gap-3">
+                    <i class="fa-solid fa-clapperboard"></i> ASEGURAR MI ENTRADA
+                </a>
+                <a href="#trailer" class="border border-lp-border hover:border-lp-acid text-white font-title text-2xl px-8 py-3 rounded transition-all flex items-center gap-3 bg-lp-card/50">
+                    <i class="fa-solid fa-play text-lp-acid"></i> VER TRÁILER OFICIAL
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-lp-dark border-t border-b border-lp-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// 01. SINOPSIS OFICIAL</span>
+                    <h2 class="font-title text-4xl sm:text-6xl text-white mb-6 uppercase">MÁS ALLÁ DEL SILENCIO, EL PODER DE UN NUEVO COMIENZO</h2>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Dirigido magistralmente por Joe Hahn, <span class="text-white font-bold">UNSHATTER</span> documenta los momentos más íntimos en el estudio, la experimentación sonora que dio vida a la nueva era de Linkin Park y la conexión inquebrantable con millones de seguidores alrededor del mundo.
+                    </p>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                        Con un sonido remasterizado en Dolby Atmos y material nunca antes visto en pantalla grande, esta proyección única en salas de cine seleccionadas en Colombia promete ser un evento histórico para el rock nacional.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 border-t border-lp-border pt-6 font-mono text-sm">
+                        <div>
+                            <span class="block text-lp-acid font-title text-2xl">92 MIN</span>
+                            <span class="text-lp-muted text-xs">Duración</span>
+                        </div>
+                        <div>
+                            <span class="block text-white font-title text-2xl">DOLBY ATMOS</span>
+                            <span class="text-lp-muted text-xs">Sonido Immersivo</span>
+                        </div>
+                        <div>
+                            <span class="block text-lp-acid font-title text-2xl">COLOMBIA</span>
+                            <span class="text-lp-muted text-xs">Funciones Únicas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-lp-acid to-lp-cyan rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative bg-lp-card border border-lp-border p-6 rounded-2xl">
+                        <div class="aspect-video bg-lp-black rounded-lg overflow-hidden relative flex items-center justify-center border border-lp-border">
+                            <img src="https://placehold.co/800x450/141419/dfc131?text=UNSHATTER+MOVIE+STILL" alt="Still de la película" class="w-full h-full object-cover opacity-80">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <a href="#trailer" class="w-16 h-16 bg-lp-acid text-black rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-play ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center text-xs font-mono text-slate-400">
+                            <span>DIRECTOR: JOE HAHN</span>
+                            <span class="text-lp-acid">ESTRENO 30.09.2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trailer" class="py-24 bg-lp-black text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// 02. AVANCE EXCLUSIVO</span>
+            <h2 class="font-title text-4xl sm:text-6xl text-white mb-6 uppercase">MIRA EL TRÁILER OFICIAL</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-10">Siente la potencia del nuevo material cinematográfico adaptado para salas de cine en Colombia.</p>
+
+            <div class="aspect-video w-full bg-lp-card border border-lp-border rounded-2xl overflow-hidden shadow-2xl relative">
+                <div class="absolute inset-0 bg-lp-dark flex flex-col items-center justify-center p-6 text-center">
+                    <div class="w-20 h-20 bg-lp-acid/20 border-2 border-lp-acid rounded-full flex items-center justify-center text-lp-acid text-3xl mb-4 animate-pulse">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <h3 class="font-title text-3xl text-white mb-2">TRÁILER OFICIAL DISPONIBLE EN SALAS</h3>
+                    <p class="text-slate-400 text-sm max-w-md mb-6">El tráiler global se proyecta exclusivamente en cines aliados. Regístrate para recibir la primicia en tu correo.</p>
+                    <a href="#register" class="bg-lp-acid text-black font-title text-lg px-6 py-2 rounded hover:bg-yellow-400 transition">QUIERO MI ACCESO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cinemas" class="py-24 bg-lp-dark border-t border-lp-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// 03. CIUDADES Y SALAS ALIADAS</span>
+                <h2 class="font-title text-4xl sm:text-6xl text-white mb-4 uppercase">DISPONIBLE EN TODA COLOMBIA</h2>
+                <p class="text-slate-400">Selecciona tu ciudad para consultar complejos de cine y horarios confirmados para el estreno.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bogota -->
+                <div class="bg-lp-card border border-lp-border rounded-2xl p-6 hover:border-lp-acid transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="font-mono text-xs text-lp-acid uppercase">CENTRO PRINCIPAL</span>
+                            <h3 class="font-title text-3xl text-white">BOGOTÁ D.C.</h3>
+                        </div>
+                        <i class="fa-solid fa-city text-2xl text-lp-muted"></i>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-6 font-sans">
+                        <li class="flex items-center justify-between border-b border-lp-border pb-2">
+                            <span>Multiplex Andino</span>
+                            <span class="text-xs font-mono text-lp-acid">Salas XD</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-lp-border pb-2">
+                            <span>Unicentro Bogotá</span>
+                            <span class="text-xs font-mono text-lp-acid">Dolby Atmos</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Plaza Central</span>
+                            <span class="text-xs font-mono text-lp-acid">Gran Estreno</span>
+                        </li>
+                    </ul>
+                    <button onclick="openBookingModal('Bogotá D.C.')" class="w-full bg-lp-black border border-lp-border hover:border-lp-acid text-white font-title text-lg py-2 rounded transition">
+                        VER FUNCIONES BOGOTÁ
+                    </button>
+                </div>
+
+                <!-- Medellin -->
+                <div class="bg-lp-card border border-lp-border rounded-2xl p-6 hover:border-lp-acid transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="font-mono text-xs text-lp-acid uppercase">ANTIOQUIA</span>
+                            <h3 class="font-title text-3xl text-white">MEDELLÍN</h3>
+                        </div>
+                        <i class="fa-solid fa-mountain-city text-2xl text-lp-muted"></i>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-6 font-sans">
+                        <li class="flex items-center justify-between border-b border-lp-border pb-2">
+                            <span>El Tesoro Parque Comercial</span>
+                            <span class="text-xs font-mono text-lp-acid">Salas XD</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-lp-border pb-2">
+                            <span>Viva Envigado</span>
+                            <span class="text-xs font-mono text-lp-acid">Dolby Atmos</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Los Molinos</span>
+                            <span class="text-xs font-mono text-lp-acid">Estreno Estándar</span>
+                        </li>
+                    </ul>
+                    <button onclick="openBookingModal('Medellín')" class="w-full bg-lp-black border border-lp-border hover:border-lp-acid text-white font-title text-lg py-2 rounded transition">
+                        VER FUNCIONES MEDELLÍN
+                    </button>
+                </div>
+
+                <!-- Cali & Other -->
+                <div class="bg-lp-card border border-lp-border rounded-2xl p-6 hover:border-lp-acid transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="font-mono text-xs text-lp-acid uppercase">VALLE Y NACIONAL</span>
+                            <h3 class="font-title text-3xl text-white">CALI Y OTRAS</h3>
+                        </div>
+                        <i class="fa-solid fa-earth-americas text-2xl text-lp-muted"></i>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-6 font-sans">
+                        <li class="flex items-center justify-between border-b border-lp-border pb-2">
+                            <span>Cali: Unicentro / Chipichape</span>
+                            <span class="text-xs font-mono text-lp-acid">Salas XD</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-lp-border pb-2">
+                            <span>Barranquilla: Buenavista</span>
+                            <span class="text-xs font-mono text-lp-acid">Dolby Atmos</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span>Cartagena / Bucaramanga</span>
+                            <span class="text-xs font-mono text-lp-acid">Disponible</span>
+                        </li>
+                    </ul>
+                    <button onclick="openBookingModal('Cali')" class="w-full bg-lp-black border border-lp-border hover:border-lp-acid text-white font-title text-lg py-2 rounded transition">
+                        VER FUNCIONES CALI
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-24 bg-lp-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-cyber-grid opacity-30 pointer-events-none"></div>
+        
+        <div class="max-w-3xl mx-auto px-4 relative z-10">
+            <div class="bg-lp-card border border-lp-border rounded-3xl p-8 sm:p-12 box-glow-acid">
+                <div class="text-center mb-8">
+                    <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// 04. REGISTRO EXCLUSIVO FAN CLUB</span>
+                    <h2 class="font-title text-4xl sm:text-5xl text-white mb-2 uppercase">ASEGURA TU PREVENTA VIP</h2>
+                    <p class="text-slate-400 text-sm">Regístrate para recibir el código de acceso prioritario a la preventa de boletas en Colombia y afiches coleccionables.</p>
+                </div>
+
+                <form id="fanForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block font-mono text-xs uppercase text-slate-300 mb-2">Nombre Completo *</label>
+                            <input type="text" id="userName" required placeholder="Ej. Alex Rodríguez" class="w-full bg-lp-black border border-lp-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-lp-acid transition">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-xs uppercase text-slate-300 mb-2">Correo Electrónico *</label>
+                            <input type="email" id="userEmail" required placeholder="tu@correo.com" class="w-full bg-lp-black border border-lp-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-lp-acid transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block font-mono text-xs uppercase text-slate-300 mb-2">Ciudad de Preferencia *</label>
+                            <select id="userCity" class="w-full bg-lp-black border border-lp-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-lp-acid transition">
+                                <option value="Bogotá D.C.">Bogotá D.C.</option>
+                                <option value="Medellín">Medellín</option>
+                                <option value="Cali">Cali</option>
+                                <option value="Barranquilla">Barranquilla</option>
+                                <option value="Bucaramanga">Bucaramanga</option>
+                                <option value="Cartagena">Cartagena</option>
+                                <option value="Otra">Otra Ciudad</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-mono text-xs uppercase text-slate-300 mb-2">Cine Preferido</label>
+                            <select id="userCinema" class="w-full bg-lp-black border border-lp-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-lp-acid transition">
+                                <option value="Cine Colombia">Cine Colombia</option>
+                                <option value="Cinemark">Cinemark</option>
+                                <option value="Cinépolis">Cinépolis</option>
+                                <option value="Royal Films">Royal Films</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 pt-2">
+                        <input type="checkbox" id="terms" required class="w-4 h-4 accent-lp-acid rounded">
+                        <label for="terms" class="text-xs text-slate-400 font-sans">Acepto recibir notificaciones sobre preventa, horarios y encuentros de fans en Colombia.</label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-lp-acid hover:bg-yellow-400 text-black font-title text-2xl py-4 rounded-xl uppercase tracking-wider shadow-lg transition-transform hover:scale-[1.01]">
+                        REGISTRARME Y OBTENER CÓDIGO
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="attendees-section" class="py-24 bg-lp-dark border-t border-lp-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                <div>
+                    <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// 05. REGISTROS EN DIRECTO</span>
+                    <h2 class="font-title text-4xl sm:text-5xl text-white uppercase">LISTA DE FANS INSCRITOS</h2>
+                    <p class="text-slate-400 font-mono text-xs sm:text-sm mt-1">Seguidores confirmados para la función especial en Colombia.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="bg-lp-card border border-lp-border px-5 py-3 text-center font-mono">
+                        <span class="block text-[10px] uppercase text-lp-muted">Total Inscritos</span>
+                        <span id="stat-total-registrations" class="font-title text-3xl font-extrabold text-lp-acid">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Actions and Search -->
+            <div class="bg-lp-card p-4 border border-lp-border rounded-xl mb-6 flex flex-col md:flex-row gap-4 items-center justify-between font-mono text-xs">
+                <div class="relative w-full md:w-80">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-lp-muted">
+                        <i class="fa-solid fa-search"></i>
+                    </span>
+                    <input type="text" id="table-search" oninput="filterTable()" placeholder="Buscar por nombre o correo..." class="w-full bg-lp-black border border-lp-border rounded-lg pl-10 pr-4 py-2.5 text-white focus:outline-none focus:border-lp-acid">
+                </div>
+                
+                <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+                    <button onclick="exportCSV()" class="bg-lp-black border border-lp-border hover:border-lp-acid text-slate-300 px-4 py-2.5 rounded-lg flex items-center gap-2 transition">
+                        <i class="fa-solid fa-file-arrow-down text-lp-acid"></i> <span>EXPORTAR CSV</span>
+                    </button>
+                    <button onclick="toggleAdminAuth()" id="admin-toggle-btn" class="bg-lp-black border border-lp-border hover:border-lp-acid text-slate-300 px-4 py-2.5 rounded-lg flex items-center gap-2 transition font-bold">
+                        <i class="fa-solid fa-lock text-lp-acid" id="admin-lock-icon"></i> <span id="admin-status-text">DESBLOQUEAR EDICIÓN</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Attendees Table -->
+            <div class="bg-lp-card border border-lp-border rounded-2xl overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-mono">
+                        <thead>
+                            <tr class="bg-lp-black border-b border-lp-border font-title text-slate-400 text-sm uppercase">
+                                <th class="p-4">#</th>
+                                <th class="p-4">Fan / Nombre</th>
+                                <th class="p-4">Correo Electrónico</th>
+                                <th class="p-4">Ciudad</th>
+                                <th class="p-4">Cine</th>
+                                <th class="p-4 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendees-table-body" class="divide-y divide-lp-border text-slate-300">
+                            <!-- Populated dynamically via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="empty-table-msg" class="hidden p-12 text-center text-slate-500 font-mono">No se encontraron registros de fans.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-lp-dark border-t border-lp-border py-12 text-center text-sm font-mono text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-lp-acid text-black flex items-center justify-center font-title font-black rounded">LP</div>
+                <span class="text-white font-title text-lg tracking-wider">LINKIN PARK UNSHATTER COLOMBIA</span>
+            </div>
+            <p>© 2026 Warner Records / Joe Hahn Films. Todos los derechos reservados. Sitio no oficial de fans en Colombia.</p>
+            <div class="flex gap-4 text-lp-acid text-lg">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-lp-card border border-lp-acid max-w-md w-full p-8 rounded-2xl text-center relative box-glow-acid">
+            <div class="w-16 h-16 bg-lp-acid text-black rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="font-title text-4xl text-white mb-2 uppercase">¡REGISTRO EXITOSO!</h3>
+            <p id="modalMessage" class="text-slate-300 text-sm mb-6">Tu código VIP ha sido generado y enviado a tu correo.</p>
+            <div class="bg-lp-black border border-lp-border p-4 rounded-xl mb-6 font-mono text-lp-acid text-2xl tracking-widest">
+                LP-COL-2026-VIP
+            </div>
+            <button onclick="closeModal()" class="w-full bg-lp-acid text-black font-title text-xl py-3 rounded hover:bg-yellow-400 transition">
+                ENTENDIDO
+            </button>
+        </div>
+    </div>
+
+    <!-- Admin Password Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 font-mono">
+        <div class="bg-lp-card border border-lp-acid max-w-sm w-full p-6 rounded-2xl space-y-4 shadow-2xl">
+            <h3 class="font-title text-2xl text-lp-acid">ACCESO ADMINISTRADOR</h3>
+            <p class="text-xs text-slate-300">Ingresa la clave de administrador para desbloquear la eliminación y edición de la tabla de fans. (Clave por defecto: <strong class="text-lp-acid">LP2026</strong>)</p>
+            <input type="password" id="admin-password-input" onkeydown="if(event.key==='Enter') submitAdminPassword()" placeholder="Contraseña..." class="w-full bg-lp-black border border-lp-border rounded-lg p-3 text-white text-xs focus:outline-none focus:border-lp-acid">
+            <div class="flex justify-end gap-2 pt-2">
+                <button onclick="closeAdminModal()" class="px-4 py-2 bg-lp-card border border-lp-border text-xs text-slate-300 rounded hover:bg-slate-800">CANCELAR</button>
+                <button onclick="submitAdminPassword()" class="px-4 py-2 bg-lp-acid text-black font-bold text-xs rounded hover:bg-yellow-400">INGRESAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Attendees list with initial seed data
+        let attendeesList = [
+            { id: 1, name: "Alejandro Silva", email: "alejo.silva@linkinpark.co", city: "Bogotá D.C.", cinema: "Cine Colombia" },
+            { id: 2, name: "Valeria Osorio", email: "valeria.osorio@outlook.com", city: "Medellín", cinema: "Cinemark" },
+            { id: 3, name: "Mateo Restrepo", email: "mateo.rock@gmail.com", city: "Cali", cinema: "Cinépolis" }
+        ];
+        let nextId = 4;
+        let isAdmin = false;
+        let adminPassword = "LP2026"; // Clave de edición por defecto
+
+        // Initialization on window load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            renderTable();
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                // Close menu on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+                });
+            }
+        });
+
+        // Countdown timer calculation
+        function updateCountdown() {
+            const targetDate = new Date('September 30, 2026 20:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                const dEl = document.getElementById('days');
+                const hEl = document.getElementById('hours');
+                const mEl = document.getElementById('minutes');
+                const sEl = document.getElementById('seconds');
+
+                if (dEl) dEl.innerText = String(days).padStart(2, '0');
+                if (hEl) hEl.innerText = String(hours).padStart(2, '0');
+                if (mEl) mEl.innerText = String(minutes).padStart(2, '0');
+                if (sEl) sEl.innerText = String(seconds).padStart(2, '0');
+            }
+        }
+
+        // Booking modal trigger from cinema cards
+        function openBookingModal(city) {
+            const citySelect = document.getElementById('userCity');
+            if (citySelect) {
+                citySelect.value = city;
+            }
+            const registerSec = document.getElementById('register');
+            if (registerSec) {
+                registerSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('userName').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const city = document.getElementById('userCity').value;
+            const cinema = document.getElementById('userCinema').value;
+
+            if (!name || !email) return;
+
+            // Add new attendee to top of list
+            attendeesList.unshift({
+                id: nextId++,
+                name: name,
+                email: email,
+                city: city,
+                cinema: cinema
+            });
+
+            renderTable();
+
+            document.getElementById('modalMessage').innerText = `¡Gracias ${name}! Hemos registrado tu cupo para ${city}. Revisa tu correo (${email}) para recibir tu código VIP.`;
+            const successModal = document.getElementById('successModal');
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const successModal = document.getElementById('successModal');
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+            document.getElementById('fanForm').reset();
+        }
+
+        // Render attendees table
+        function renderTable() {
+            const tbody = document.getElementById('attendees-table-body');
+            const emptyMsg = document.getElementById('empty-table-msg');
+            const searchInput = document.getElementById('table-search');
+            
+            if (!tbody) return;
+
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            const filtered = attendeesList.filter(item => 
+                item.name.toLowerCase().includes(searchTerm) || 
+                item.email.toLowerCase().includes(searchTerm) ||
+                item.city.toLowerCase().includes(searchTerm)
+            );
+
+            tbody.innerHTML = '';
+
+            if (filtered.length === 0) {
+                emptyMsg.classList.remove('hidden');
+            } else {
+                emptyMsg.classList.add('hidden');
+                filtered.forEach(item => {
+                    tbody.innerHTML += `
+                        <tr class="hover:bg-lp-black/50 transition">
+                            <td class="p-4 text-lp-muted">#${item.id}</td>
+                            <td class="p-4 font-bold text-white">${escapeHtml(item.name)}</td>
+                            <td class="p-4 text-slate-400">${escapeHtml(item.email)}</td>
+                            <td class="p-4 text-lp-acid">${escapeHtml(item.city)}</td>
+                            <td class="p-4 text-slate-300">${escapeHtml(item.cinema)}</td>
+                            <td class="p-4 text-center">
+                                <button onclick="deleteRow(${item.id})" title="Eliminar registro" class="p-2 rounded transition ${isAdmin ? 'bg-rose-950 text-rose-300 hover:bg-rose-900' : 'bg-lp-black text-slate-600 hover:text-slate-400'}">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+
+            const totalEl = document.getElementById('stat-total-registrations');
+            if (totalEl) {
+                totalEl.innerText = attendeesList.length;
+            }
+        }
+
+        function filterTable() {
+            renderTable();
+        }
+
+        // Admin authentication functions
+        function toggleAdminAuth() {
+            if (isAdmin) {
+                isAdmin = false;
+                updateAdminUI();
+                alert("Modo Administrador desactivado.");
+            } else {
+                const passInput = document.getElementById('admin-password-input');
+                if (passInput) passInput.value = '';
+                document.getElementById('admin-modal').classList.remove('hidden');
+                document.getElementById('admin-modal').classList.add('flex');
+            }
+        }
+
+        function closeAdminModal() {
+            const adminModal = document.getElementById('admin-modal');
+            adminModal.classList.add('hidden');
+            adminModal.classList.remove('flex');
+        }
+
+        function submitAdminPassword() {
+            const pass = document.getElementById('admin-password-input').value;
+            if (pass === adminPassword) {
+                isAdmin = true;
+                closeAdminModal();
+                updateAdminUI();
+                alert("¡Modo Administrador activado con éxito! Ahora puedes eliminar registros.");
+            } else {
+                alert("Contraseña incorrecta. La clave por defecto es: LP2026");
+            }
+        }
+
+        function updateAdminUI() {
+            const statusText = document.getElementById('admin-status-text');
+            const lockIcon = document.getElementById('admin-lock-icon');
+            if (statusText) statusText.innerText = isAdmin ? "ADMIN ACTIVO" : "DESBLOQUEAR EDICIÓN";
+            if (lockIcon) {
+                lockIcon.className = isAdmin ? "fa-solid fa-lock-open text-emerald-400" : "fa-solid fa-lock text-lp-acid";
+            }
+            renderTable();
+        }
+
+        // Delete row function
+        function deleteRow(id) {
+            if (!isAdmin) {
+                alert("Acción restringida. Debes hacer clic en 'DESBLOQUEAR EDICIÓN' e ingresar la clave (LP2026) para borrar registros.");
+                toggleAdminAuth();
+                return;
+            }
+            attendeesList = attendeesList.filter(item => item.id !== id);
+            renderTable();
+        }
+
+        // Export table data to CSV
+        function exportCSV() {
+            if (attendeesList.length === 0) {
+                alert("No hay registros para exportar.");
+                return;
+            }
+            let csvContent = "data:text/csv;charset=utf-8,ID,Nombre,Correo,Ciudad,Cine\n";
+            attendeesList.forEach(row => {
+                csvContent += `${row.id},"${row.name}","${row.email}","${row.city}","${row.cinema}"\n`;
+            });
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "fans_linkin_park_unshatter_colombia.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Helper for sanitizing strings
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
