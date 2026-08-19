@@ -493,7 +493,7 @@
     <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 font-mono">
         <div class="bg-lp-card border border-lp-acid max-w-sm w-full p-6 rounded-2xl space-y-4 shadow-2xl">
             <h3 class="font-title text-2xl text-lp-acid">ACCESO ADMINISTRADOR</h3>
-            <p class="text-xs text-slate-300">Ingresa la clave de administrador para desbloquear la eliminación y edición de la tabla de fans. (Clave por defecto: <strong class="text-lp-acid">LP2026</strong>)</p>
+            <p class="text-xs text-slate-300">Ingresa la clave de administrador para desbloquear la eliminación y edición de la tabla de fans. </p>
             <input type="password" id="admin-password-input" onkeydown="if(event.key==='Enter') submitAdminPassword()" placeholder="Contraseña..." class="w-full bg-lp-black border border-lp-border rounded-lg p-3 text-white text-xs focus:outline-none focus:border-lp-acid">
             <div class="flex justify-end gap-2 pt-2">
                 <button onclick="closeAdminModal()" class="px-4 py-2 bg-lp-card border border-lp-border text-xs text-slate-300 rounded hover:bg-slate-800">CANCELAR</button>
@@ -681,7 +681,7 @@
                 updateAdminUI();
                 alert("¡Modo Administrador activado con éxito! Ahora puedes eliminar registros.");
             } else {
-                alert("Contraseña incorrecta. La clave por defecto es: LP2026");
+                alert("Contraseña incorrecta.;
             }
         }
 
@@ -698,7 +698,7 @@
         // Delete row function
         function deleteRow(id) {
             if (!isAdmin) {
-                alert("Acción restringida. Debes hacer clic en 'DESBLOQUEAR EDICIÓN' e ingresar la clave (LP2026) para borrar registros.");
+                alert("Acción restringida. Debes hacer clic en 'DESBLOQUEAR EDICIÓN' e ingresar la clave para borrar registros.");
                 toggleAdminAuth();
                 return;
             }
