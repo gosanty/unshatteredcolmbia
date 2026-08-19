@@ -681,7 +681,7 @@
                 updateAdminUI();
                 alert("¡Modo Administrador activado con éxito! Ahora puedes eliminar registros.");
             } else {
-                alert("Contraseña incorrecta.;
+                alert("Contraseña incorrecta.");
             }
         }
 
@@ -698,7 +698,7 @@
         // Delete row function
         function deleteRow(id) {
             if (!isAdmin) {
-                alert("Acción restringida. Debes hacer clic en 'DESBLOQUEAR EDICIÓN' e ingresar la clave para borrar registros.");
+                alert("Acción restringida. Debes hacer clic en 'DESBLOQUEAR EDICIÓN' e ingresar la clave (LP2026) para borrar registros.");
                 toggleAdminAuth();
                 return;
             }
