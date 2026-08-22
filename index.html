@@ -4,25 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkin Park UNSHATTER Colombia</title>
-<!-- Explicación del archivo de Google Drive en la aplicación -->
-<!--
-    En la aplicación web "Linkin Park UNSHATTER Colombia", el archivo asociado a Google Drive 
-    se define conceptualmente como:
-    
-    Nombre del archivo: linkin_park_unshatter_db.json
-    
-    ¿Qué representa y dónde se usa?
-    1. Simulación de la API de Google Drive: La aplicación utiliza el flujo de autenticación de Google 
-       (Google Identity Services / OAuth) para conectar con la cuenta del usuario.
-    2. Almacenamiento en la nube: Cuando los fans llenan el formulario de registro (Nombre, Correo, 
-       Ciudad y Cine de preferencia), los datos se acumulan en un arreglo JSON local y se simula la 
-       sincronización automática con un archivo JSON llamado `linkin_park_unshatter_db.json` dentro de la 
-       unidad de Google Drive del usuario.
-    3. Funciones en el código:
-       - `handleGoogleAuth()`: Inicializa el token de acceso simulado o real para conectar Google Drive.
-       - `syncToDriveFile()`: Simula la petición a la API de Google Drive para actualizar el archivo JSON.
-       - Exportación: También permite respaldar los datos descargando un archivo CSV compatible con hojas de cálculo.
--->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -189,14 +170,10 @@
                     </p>
                     <div class="grid grid-cols-2 gap-4 border-t border-lp-border pt-6 font-mono text-sm">
                         <div>
-                            <span class="block text-lp-acid font-title text-2xl">92 MIN</span>
+                            <span class="block text-lp-acid font-title text-2xl">110 MIN</span>
                             <span class="text-lp-muted text-xs">Duración</span>
                         </div>
-                        <div>
-                            <span class="block text-white font-title text-2xl">DOLBY ATMOS</span>
-                            <span class="text-lp-muted text-xs">Sonido Immersivo</span>
                         </div>
-                    </div>
                 </div>
 
                 <div class="relative group">
@@ -215,7 +192,7 @@
     <section id="trailer" class="py-24 bg-lp-black text-center">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="font-title text-4xl sm:text-6xl text-white mb-6 uppercase">MIRA EL TRÁILER</h2>
-            <p class="text-slate-400 max-w-xl mx-auto mb-10">Siente la potencia del nuevo material cinematográfico adaptado para salas de cine en Colombia.</p>
+            <p class="text-slate-400 max-w-xl mx-auto mb-10">Has escuchado las canciones cientos de veces. Ahora prepárate para sentirlas de otra forma. Linkin Park, pantalla gigante y sonido de cine. Eso es todo lo que necesitas saber.</p>
 
             <div class="aspect-video w-full bg-lp-card border border-lp-border rounded-2xl overflow-hidden shadow-2xl relative">
                 <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/K9Lpxc7bVTM" title="Tráiler de UNSHATTER" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -267,7 +244,7 @@
                 <div class="text-center mb-8">
                     <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">REGÍSTRATE</span>
                     <h2 class="font-title text-4xl sm:text-5xl text-white mb-2 uppercase">INSCRÍBETE A LA FUNCIÓN EXCLUSIVA DE LPC</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed">La inscripción en este formulario no garantiza el acceso a la función exclusiva. Las entradas se entregarán de acuerdo con las condiciones de la venta oficial, cuyo enlace e instrucciones se compartirán directamente a través de los datos de contacto registrados por los inscritos. Cupos limitados hasta completar el aforo de la sala.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">La inscripción en este formulario no garantiza el acceso a la función exclusiva. Las entradas se entregarán de acuerdo con las condiciones de la venta oficial, cuyo enlace e instrucciones se compartirán directamente a través de los datos de contacto registrados por los inscritos. Cupos limitados hasta completar el aforo de las salas. Inicialmente se considera la función en Bogotá, pero se buscan opciones en otras ciudades de acuerdo al número de registros.</p>
                 </div>
 
                 <form id="fanForm" action="https://script.google.com/macros/s/AKfycbzcBjbo6rpnSoMGb-xPlf1MlCw2YcLyHrbEUKFhhLPq-kp6QijbfiA4QbHZuXDHflHe/exec" method="POST" target="hidden_iframe" onsubmit="handleFormSubmit(event)" class="space-y-6">
@@ -294,8 +271,6 @@
                                 <option value="Medellín">Medellín</option>
                                 <option value="Cali">Cali</option>
                                 <option value="Barranquilla">Barranquilla</option>
-                                <option value="Bucaramanga">Bucaramanga</option>
-                                <option value="Cartagena">Cartagena</option>
                                 <option value="Otra">Otra Ciudad</option>
                             </select>
                         </div>
@@ -305,13 +280,12 @@
                                 <option value="Cine Colombia">Cine Colombia</option>
                                 <option value="Cinemark">Cinemark</option>
                                 <option value="Cinépolis">Cinépolis</option>
-                                <option value="Royal Films">Royal Films</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block font-mono text-xs uppercase text-slate-300 mb-2">Cantidad de Boletas *</label>
+                        <label class="block font-mono text-xs uppercase text-slate-300 mb-2">Cantidad de Boletas (Seleccione únicamente la cantidad de la que esta seguro) *</label>
                         <select name="cantidad" id="ticketQuantity" required class="w-full bg-lp-black border border-lp-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-lp-acid transition">
                             <option value="1">1 boleta</option>
                             <option value="2">2 boletas</option>
@@ -319,6 +293,11 @@
                             <option value="4">4 boletas</option>
                             <option value="5">5 boletas</option>
                             <option value="6">6 boletas</option>
+                            <option value="7">7 boletas</option>
+                            <option value="8">8 boletas</option>
+                            <option value="9">9 boletas</option>
+                            <option value="10">10 boletas</option>
+
                         </select>
                     </div>
 
@@ -346,9 +325,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                 <div>
-                    <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// FANS REGISTRADOS</span>
+                    <span class="text-lp-acid font-mono text-xs tracking-widest uppercase block mb-3">// CANTIDAD DE REGISTRADOS</span>
                     <h2 class="font-title text-4xl sm:text-5xl text-white uppercase">QUIÉN MÁS ASISTE</h2>
-                    <p class="text-slate-400 font-mono text-xs sm:text-sm mt-1">Vista pública limitada por protección de datos: se muestran nombre, apellido, ciudad, cantidad de boletas y canción favorita.</p>
+                    <p class="text-slate-400 font-mono text-xs sm:text-sm mt-1">Mira si tus amigos vienen a la proyección exclusiva de Linkin Park Colombia.</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-3">
                     <button onclick="loadAttendeesFromSheet()" id="drive-auth-btn" class="bg-lp-card border border-lp-border hover:border-lp-acid text-white px-5 py-3 rounded-xl font-mono text-xs flex items-center gap-3 transition">
@@ -356,7 +335,7 @@
                         <span id="drive-auth-text">ACTUALIZAR LISTA</span>
                     </button>
                     <div class="bg-lp-card border border-lp-border px-5 py-3 text-center font-mono">
-                        <span class="block text-[10px] uppercase text-lp-muted">Fans registrados</span>
+                        <span class="block text-[10px] uppercase text-lp-muted">Cantidad de registros</span>
                         <span id="stat-total-registrations" class="font-title text-3xl font-extrabold text-lp-acid">0</span>
                     </div>
                 </div>
@@ -404,11 +383,11 @@
                 <div class="w-10 h-8 bg-lp-acid text-black flex items-center justify-center font-title font-black rounded">LPC</div>
                 <span class="text-white font-title text-lg tracking-wider">LINKIN PARK COLOMBIA</span>
             </div>
-            <p>© 2026 Warner Records / Joe Hahn Films</p>
+            <p>© 2026 Linkin Park Colombia / May te amo</p>
             <div class="flex gap-4 text-lp-acid text-lg">
                 <a href="https://www.instagram.com/linkinparkcolombia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Linkin Park Colombia" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@linkinparkcolombia" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Linkin Park Colombia" class="hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+
             </div>
         </div>
     </footer>
@@ -869,5 +848,413 @@
             return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
         }
     </script>
+    <!-- Campaña: Pide la película -->
+<style>
+    .campaign-cta {
+        position: fixed;
+        left: max(1rem, env(safe-area-inset-left));
+        bottom: max(1rem, env(safe-area-inset-bottom));
+        z-index: 9000;
+        width: 7.25rem;
+        height: 7.25rem;
+        border: 2px solid #dfc131;
+        border-radius: 9999px;
+        background: #070709;
+        color: #dfc131;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .25rem;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.15rem;
+        line-height: 1;
+        letter-spacing: .08em;
+        text-align: center;
+        box-shadow: 0 0 0 0 rgba(223,193,49,.5), 0 12px 35px rgba(0,0,0,.6);
+        cursor: pointer;
+        animation: campaignPulse 2.4s infinite;
+        transition: transform .2s, background .2s, color .2s;
+    }
+
+    .campaign-cta:hover,
+    .campaign-cta:focus-visible {
+        background: #dfc131;
+        color: #070709;
+        transform: scale(1.05);
+        outline: 3px solid #fff;
+        outline-offset: 4px;
+    }
+
+    .campaign-cta i {
+        font-size: 1.25rem;
+    }
+
+    .campaign-modal[hidden] {
+        display: none;
+    }
+
+    .campaign-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+    }
+
+    .campaign-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,.84);
+        backdrop-filter: blur(8px);
+    }
+
+    .campaign-dialog {
+        position: relative;
+        width: min(100%, 38rem);
+        max-height: calc(100dvh - 2rem);
+        overflow: auto;
+        padding: clamp(1.25rem, 5vw, 2rem);
+        border: 1px solid #3a3a43;
+        border-top: 4px solid #dfc131;
+        border-radius: 1rem;
+        background: #141419;
+        box-shadow: 0 30px 90px rgba(0,0,0,.78),
+                    0 0 35px rgba(223,193,49,.14);
+    }
+
+    .campaign-close-x {
+        position: absolute;
+        top: .7rem;
+        right: .8rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid #282830;
+        border-radius: 9999px;
+        background: #070709;
+        color: #cbd5e1;
+    }
+
+    .campaign-close-x:hover,
+    .campaign-close-x:focus-visible {
+        color: #dfc131;
+        border-color: #dfc131;
+        outline: none;
+    }
+
+    .campaign-message {
+        padding: .9rem 1rem;
+        border: 1px solid #282830;
+        border-radius: .65rem;
+        background: #070709;
+    }
+
+    .campaign-message code {
+        color: #f8fafc;
+        font-family: 'Space Mono', monospace;
+        font-size: .78rem;
+        overflow-wrap: anywhere;
+    }
+
+    .campaign-feedback {
+        min-height: 1.4rem;
+        color: #dfc131;
+        font: 700 .72rem 'Space Mono', monospace;
+    }
+
+    .campaign-actions {
+        display: grid;
+        gap: .75rem;
+    }
+
+    .campaign-button {
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .65rem;
+        border-radius: .5rem;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.18rem;
+        letter-spacing: .06em;
+        transition: filter .2s, transform .2s;
+    }
+
+    .campaign-button:hover {
+        filter: brightness(1.12);
+        transform: translateY(-1px);
+    }
+
+    .campaign-button:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 3px;
+    }
+
+    .campaign-primary {
+        background: #dfc131;
+        color: #070709;
+    }
+
+    .campaign-instagram {
+        background: #fff;
+        color: #070709;
+    }
+
+    .campaign-x {
+        background: #000;
+        color: #fff;
+    }
+
+    .campaign-secondary {
+        border: 1px solid #3a3a43;
+        background: #0f0f13;
+        color: #e2e8f0;
+    }
+
+    body.campaign-open {
+        overflow: hidden;
+    }
+
+    @keyframes campaignPulse {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(223,193,49,.45),
+                        0 12px 35px rgba(0,0,0,.6);
+        }
+
+        50% {
+            box-shadow: 0 0 0 12px rgba(223,193,49,0),
+                        0 12px 35px rgba(0,0,0,.6);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .campaign-cta {
+            width: 6rem;
+            height: 6rem;
+            font-size: 1rem;
+        }
+
+        .campaign-dialog {
+            padding: 1.25rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .campaign-cta {
+            animation: none;
+        }
+
+        .campaign-cta,
+        .campaign-button {
+            transition: none;
+        }
+    }
+</style>
+
+<button
+    id="campaign-cta"
+    class="campaign-cta"
+    type="button"
+    aria-haspopup="dialog"
+    aria-controls="campaign-modal"
+>
+    <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+    <span>PIDE LA<br>PELÍCULA</span>
+</button>
+
+<div id="campaign-modal" class="campaign-modal" hidden>
+    <div
+        class="campaign-backdrop"
+        data-close-campaign
+        aria-hidden="true"
+    ></div>
+
+    <section
+        class="campaign-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="campaign-title"
+        aria-describedby="campaign-description"
+        tabindex="-1"
+    >
+        <button
+            class="campaign-close-x"
+            type="button"
+            data-close-campaign
+            aria-label="Cerrar ventana"
+        >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+
+        <span class="font-mono text-xs text-lp-acid tracking-widest">
+            CAMPAÑA LINKIN PARK COLOMBIA
+        </span>
+
+        <h2
+            id="campaign-title"
+            class="font-title text-4xl sm:text-5xl text-white mt-3 pr-10 leading-none"
+        >
+            QUEREMOS UNSHATTER EN COLOMBIA 🇨🇴
+        </h2>
+
+        <p
+            id="campaign-description"
+            class="text-slate-300 mt-4 leading-relaxed"
+        >
+            Ayúdanos a demostrar que Colombia quiere vivir
+            <strong class="text-white">UNSHATTER</strong> en cines.
+            Copia el mensaje y abre la publicación en Instagram.
+            Desde Instagram podrás compartirla en tus historias,
+            enviarla o usar las opciones disponibles en tu cuenta.
+        </p>
+
+        <p class="mt-5 mb-2 font-mono text-xs text-lp-muted">
+            MENSAJE DE CAMPAÑA
+        </p>
+
+        <div class="campaign-message">
+            <code id="campaign-copy-text">Queremos #UNSHATTER en Colombia 🇨🇴 @linkinparkcolombia @cinepolis.co @cinemarkcol @cinecolombia </code>
+        </div>
+
+        <p
+            id="campaign-feedback"
+            class="campaign-feedback mt-2"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+        <div class="campaign-actions">
+            <button
+                id="copy-campaign"
+                class="campaign-button campaign-primary"
+                type="button"
+            >
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                <span>COPIAR MENSAJE</span>
+            </button>
+
+            <a
+                class="campaign-button campaign-instagram"
+                href="https://www.instagram.com/p/DcSKHpbkUK1/?igsi=enBubnVxNmRoczJ2"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                <span>ABRE PUBLICACIÓN EN INSTAGRAM Y REPOSTEALA</span>
+            </a>
+            <a
+                class="campaign-button campaign-x"
+                href="https://x.com/lpcolombia/status/2090830264700137831"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-x" aria-hidden="true"></i>
+                <span>ABRE PUBLICACIÓN EN X Y REPOSTEALA</span>
+            </a>
+
+            <button
+                class="campaign-button campaign-secondary"
+                type="button"
+                data-close-campaign
+            >
+                CERRAR
+            </button>
+        </div>
+    </section>
+</div>
+
+<script>
+    (() => {
+        const modal = document.getElementById('campaign-modal');
+        const cta = document.getElementById('campaign-cta');
+        const dialog = modal.querySelector('[role="dialog"]');
+        const copyButton = document.getElementById('copy-campaign');
+        const feedback = document.getElementById('campaign-feedback');
+
+        let lastFocus;
+
+        function openCampaign() {
+            lastFocus = document.activeElement;
+            modal.hidden = false;
+            document.body.classList.add('campaign-open');
+            requestAnimationFrame(() => dialog.focus());
+        }
+
+        function closeCampaign() {
+            modal.hidden = true;
+            document.body.classList.remove('campaign-open');
+            feedback.textContent = '';
+
+            if (lastFocus) {
+                lastFocus.focus();
+            }
+        }
+
+        cta.addEventListener('click', openCampaign);
+
+        modal.querySelectorAll('[data-close-campaign]').forEach(element => {
+            element.addEventListener('click', closeCampaign);
+        });
+
+        document.addEventListener('keydown', event => {
+            if (modal.hidden) return;
+
+            if (event.key === 'Escape') {
+                closeCampaign();
+            }
+
+            if (event.key === 'Tab') {
+                const focusable = [
+                    ...modal.querySelectorAll('button, a[href]')
+                ];
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (
+                    event.shiftKey &&
+                    document.activeElement === first
+                ) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (
+                    !event.shiftKey &&
+                    document.activeElement === last
+                ) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+
+        copyButton.addEventListener('click', async () => {
+            const message =
+                document.getElementById('campaign-copy-text').textContent;
+
+            try {
+                await navigator.clipboard.writeText(message);
+            } catch {
+                const field = document.createElement('textarea');
+
+                field.value = message;
+                field.style.cssText = 'position:fixed;opacity:0';
+
+                document.body.appendChild(field);
+                field.select();
+                document.execCommand('copy');
+                field.remove();
+            }
+
+            feedback.textContent = '✓ MENSAJE COPIADO';
+            copyButton.querySelector('span').textContent = 'COPIADO';
+
+            setTimeout(() => {
+                copyButton.querySelector('span').textContent =
+                    'COPIAR MENSAJE';
+            }, 1800);
+        });
+    })();
+</script>
 </body>
 </html>
